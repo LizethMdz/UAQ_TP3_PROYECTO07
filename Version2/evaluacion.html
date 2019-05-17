@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<title>Arquetipos Sistémicos</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Arquetipos Sistémicos">
+	<meta name="keywords" content="endGam,gGaming, magazine, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon -->
+	<link href="img/favicon.ico" rel="shortcut icon" />
+
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
+
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
+	<link rel="stylesheet" href="css/owl.carousel.min.css" />
+	<link rel="stylesheet" href="css/animate.css" />
+
+	<!-- Main Stylesheets -->
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/quiz.css">
+
+</head>
+
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+	<!-- Top right elements -->
+	<div class="spacial-controls">
+		<div class="search-switch"><img src="img/search-icon.png" alt=""></div>
+		<div class="nav-switch-warp">
+			<div class="nav-switch">
+				<div class="ns-bar"></div>
+			</div>
+		</div>
+	</div>
+	<!-- Top right elements end -->
+
+	<div class="main-warp">
+		<!-- header section -->
+		<header class="header-section">
+			<div class="header-close">
+				<i class="fa fa-times"></i>
+			</div>
+			<div class="header-warp">
+				<a href="" class="site-logo">
+					<img src="./img/gallery-pro/Logotipo-negro.png" alt="" width="150" height="150">
+				</a>
+				<img src="img/menu-icon.png" alt="" class="menu-icon">
+				<ul class="main-menu">
+					<li><a href="./index.html">Inicio</a></li>
+					<li><a href="./introduccion.html">Introducción</a></li>
+					<li><a href="./infografia.html">Infografía</a></li>
+					<li><a href="./interaccion.html">Interacción</a></li>
+					<li class="active"><a href="./evaluacion.html">Evaluación</a></li>
+					<li><a href="./autores.html">Autores</a></li>
+				</ul>
+
+			</div>
+			<div class="copyright"> 2019 @ All rights reserved</div>
+		</header>
+		<!-- header section end -->
+
+		<!-- Page section -->
+		<div class="page-section elements-page">
+			
+			<div class="element">
+				<h2 class="el-title">Evaluación </h2>
+				<div class="row">
+					<div class="col-xl-12">
+						<!-- inicio quiz -->
+						<section ng-app="ngQuiz" ng-controller="ngQuizController" class="quiz">
+							<image-preload></image-preload>
+							<div class="progress" ng-if="quizProgress.inProgress && quizProgress.currentQuestion <= quizProgress.lastQuestion">
+							  <span ng-cloak class="counter">Question {{quizProgress.currentQuestionFriendly}} of {{quizProgress.lastQuestion}}</span>
+							  <div class="progress-bar" progress-bar></div>
+							</div>
+							<div class="content">
+							  <!-- intro -->
+							  <section ng-cloak class="intro fade-in" ng-if="!quizProgress.loading && !quizProgress.inProgress && !quizProgress.finished">
+								<div ng-cloak class="row">
+								  <div class="col-xs-12">
+									<h1 class="el-title text-white">{{::quizMetadata.title}}</h1>
+									<p>{{::quizMetadata.intro}}</p>
+									</div>
+								
+								</div>
+									
+									<div class="row">
+										<div class="col-xs-12">
+									<!-- <img class="rounded mx-auto d-block" ng-src="{{quizMetadata.introImg}}"  style="width:100px; height:100px;" /> -->
+									<aside class="figure-caption text-xs-right" ng-if="quizMetadata.introImgCredit">Photo credit: {{::quizMetadata.introImgCredit}}</aside>
+								  </div>
+									</div>
+
+									<img src="https://image.flaticon.com/icons/svg/1039/1039328.svg" class="rounded mx-auto d-block" style="width:100px; height:100px;">
+							
+								
+								<div class="row">
+								  <button class="btn btn-success mx-auto mt-5" ng-click="startQuiz()">Comenzar</button>
+								</div>
+							  </section>
+						
+							  <!-- question list -->
+							  <section ng-cloak class="fade-in question" ng-if="quizProgress.inProgress && quizProgress.currentQuestion <= quizProgress.lastQuestion">
+								<div animate-progression>
+								  <div class="text-center">
+									<img class="img-responsive" ng-src="{{quizQuestions[quizProgress.currentQuestion].questionImg}}" />
+								  </div>
+						
+								  <p class="question-content">{{quizQuestions[quizProgress.currentQuestion].question}}</p>
+								  <div class="question-options">
+									<div ng-repeat="option in quizQuestions[quizProgress.currentQuestion].options | orderBy: '-'">
+									  <div class="option" ng-class="{'wrong': quizQuestions[quizProgress.currentQuestion].answerChecked && option.selected && !option.correct, 'correct': option.correct && quizQuestions[quizProgress.currentQuestion].answerChecked, 'dim': quizQuestions[quizProgress.currentQuestion].answerChecked}">
+										<input type="radio" name="option" id="{{$index}}" ng-click="answerQuestion({selected: option.name})" ng-disabled="quizQuestions[quizProgress.currentQuestion].answerChecked">
+										<label for="{{$index}}">{{option.name}}</label>
+									  </div>
+									  <div class="row feedback" ng-if="quizQuestions[quizProgress.currentQuestion].answerChecked && option.correct">
+										<span ng-bind-html="quizQuestions[quizProgress.currentQuestion].feedback"></span>
+									  </div>
+									</div>
+								  </div>
+						
+								  <div class="row">
+									<button ng-if="quizProgress.currentQuestion === -1" class="btn btn-primary" ng-click="startQuiz()">Start Quiz</button>
+									<button ng-if="quizQuestions[quizProgress.currentQuestion].answerChecked && quizProgress.currentQuestionFriendly !== quizProgress.lastQuestion" class="btn btn-primary pull-right" ng-click="nextQuestion()">Next Question <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+									<button ng-if="!quizQuestions[quizProgress.currentQuestion].answerChecked" ng-disabled="!quizQuestions[quizProgress.currentQuestion].answered" class="btn btn-primary pull-right" ng-click="checkAnswer()">Check Answer</button>
+								  </div>
+								</div>
+						
+								<div class="get-my-results text-center" ng-if="quizProgress.currentQuestionFriendly === quizProgress.lastQuestion && quizQuestions[quizProgress.currentQuestion].answerChecked">
+								  <button class="pulse btn btn-primary" ng-click="getScore()">Get My Results</button>
+								</div>
+							  </section>
+						
+							  <section class="loading" ng-if="quizProgress.loading || quizProgress.calculatingScore">
+								<div class="loader"></div>
+							  </section>
+						
+							  <section class="fade-in" ng-if="!quizProgress.calculatingScore && !quizProgress.inProgress && quizProgress.currentQuestionFriendly === quizProgress.lastQuestion">
+								<div class="results">
+								  <div class="text-center">
+									<h1>Your Score</h1>
+									<h2>{{score}}</h2>
+								  </div>
+								</div>
+						
+								<div class="text-center">
+								  <button class="start-over btn btn-success" ng-click="startOver()"><i class="fa fa-repeat" aria-hidden="true"></i>Try Again</button>
+								</div>
+							  </section>
+						  </section>
+						  <!-- fin cuestionario -->
+						
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<!-- Page section end-->
+	</div>
+
+	<!-- Search model -->
+	<!-- <div class="search-model">
+		<div class="h-100 d-flex align-items-center justify-content-center">
+			<div class="search-close-switch">x</div>
+			<form class="search-moderl-form">
+				<input type="text" id="search-input" placeholder="Search here.....">
+			</form>
+		</div>
+	</div> -->
+	<!-- Search model end -->
+
+
+	<!--====== Javascripts & Jquery ======-->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.nicescroll.min.js"></script>
+	<script src="js/isotope.pkgd.min.js"></script>
+	<script src="js/imagesloaded.pkgd.min.js"></script>
+	<script src="js/circle-progress.min.js"></script>
+	<script src="js/main.js"></script>
+	<!-- <script src="js/preguntas.js"></script> -->
+
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-sanitize.min.js'></script>
+	
+	<script src="js/quiz.js"></script>
+
+
+</body>
+
+</html>
