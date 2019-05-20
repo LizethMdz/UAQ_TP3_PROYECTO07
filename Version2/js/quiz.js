@@ -6,82 +6,115 @@ angular.module('ngQuiz', ['ngSanitize'])
   $scope.quizData = {
     "quizMetadata": {
       "title": "Veamos tu aprendizaje!",
-      "intro": "Do you know The Day of the Programmer is an international professional day that is celebrated on the 256th (hexadecimal 100th, or the 28th) day of each year (September 13 during common years and on September 12 in leap years).!",
+      "intro": "Diviertete aprendiendo, te invitamos a contestar la siguiente dinámica y verás que tanto haz aprendido !",
       "introImg":"https://image.flaticon.com/icons/svg/1646/1646100.svg"
     },
     "quizQuestions": [{
-      "question": "Which statement is true or false regarding 3D bio-printing?",
-      "questionImg": "http://sites.hss.com/Images/Quiz/3DPrinting.jpg",
-      "feedback": "Bio-printing is a medical research on the 3D creation of complex structures from living tissue.",
+      "question": "Selecciona el nombre del Arquetipo al que pertenesca la siguiente imagen:",
+      "questionImg": "img/111.png",
+      "feedback": "Pese a que dentro de una empresa utiiza maquinarias de produccion, cuando existe una demora ésta llega a ocasionar un desastre en el sistema",
       "options": [{
-        "name": "3D organic food printing.",
-        "correct": false
-      }, {
-        "name": "3D printing living tissues.",
+        "name": "Arquetipo de Compensación y Demora.",
         "correct": true
       }, {
-        "name": "3D ecological printing.",
+        "name": "Arquetipo de Desplazamiento de la carga hacia la Intervención.",
+        "correct": false
+      }, {
+        "name": "Arquetipo de Tragedia Común.",
         "correct": false
       },
         {
-        "name": "3d printing on a nano-particle scal.",
+        "name": "Arquetipo de Limites de crecimiento.",
         "correct": false
       }]
     }, {
-      "question": "Which programming languages appear in word search image?",
-      "questionImg": "http://sites.hss.com/Images/Quiz/WordSearch.jpg",
-      "feedback": "We use all these technologies to build our applications at HSS and PYTHON mainly used for personal projects. Need some ideas ask Gary about rasberry pi + python.",
+      "question": "Selecciona el nombre del Arquetipo al que pertenesca la siguiente imagen:",
+      "questionImg": "img/333.png",
+      "feedback": "Aqui se plantea una solucion A de corto plazo para que se pueda resolver problemas  inmediatos. Pero, cuando ésta  se sigue usando cada vez más, con el tiempo ésta solución va crando una dependencia que pude ya no ser tan viable.",
       "options": [{
-        "name": "CSHARP,  PYTHON,  JAVASCRIPT,  JQUERY,  ANGULAR,  JAVA.",
-        "correct": true
-      }, {
-        "name": "HTML,  PYTHON,  RUBY,  JQUERY,  ANGULAR,  JAVA, SQL.",
+        "name": "Arquetipo de Escalada.",
         "correct": false
       }, {
-        "name": "CPLUS,  PYTHON,  JAVASCRIPT,  JQUERY,  ANGULAR,  JAVA.",
+        "name": "Arquetipo de Compensación entre Proceso y Demora.",
         "correct": false
-      }]
-    }, {
-      "question": "IT applications that exist in HSS and some have been made up. Can you tell which is which?",
-      "questionImg": "http://sites.hss.com/Images/Quiz/ITApplications.jpg",
-      "feedback": "These are only few of our applications and the list still growing.",
-      "options": [{
-        "name": "Heat, Amazon, Jira, Paypal, hssworld, LogMe.",
+      }, 
+      {
+        "name": "Arquetipo de Éxito para quien tiene Éxito.",
         "correct": false
-      }, {
-        "name": "Ebay, Amazon, Paypal, Spanner, hssworld, LogMe.",
-        "correct": false
-      }, {
-        "name": "Heat, Jira, Spanner, hssworld, LogMe.",
+      },{
+        "name": "Arquetipo de Desplazamiento de la Carga.",
         "correct": true
       }]
     }, {
-      "question": "Which games are these?",
-      "questionImg": "http://sites.hss.com/Images/Quiz/NameTheGame.jpg",
-      "feedback": "According to SteamSpy, Counter-Strike: Global Offensive has sold 25 million units. This surpasses Minecraft's sales, which number 24.5 million, making CS:GO the bestselling PC game of the Steam era, and probably of all time.",
+      "question": "Selecciona el nombre del Arquetipo al que pertenesca la siguiente imagen:",
+      "questionImg": "img/555.png",
+      "feedback": "Ocurre cuando se empleó una esrtuctura de la carga, que implicaba dar una solución a corto plazo, es aquí donde llega a tener un impacto en las metas fundamentales que se plantearon a largo plazo..",
       "options": [{
-        "name": "Counter Strike, Red Alert",
+        "name": "Arquetipo de Cremiento y Subinversión.",
+        "correct": false
+      }, {
+        "name": "Arquetipo de Soluciones rápidas que fallan.",
+        "correct": false
+      },{
+        "name": "Arquetipo de Limites de Crecimiento.",
+        "correct": false
+      }, {
+        "name": "Arquetipo de Erosión de Metas.",
         "correct": true
-      }, {
-        "name": "Red Alert, Call of Duty",
-        "correct": false
-      }, {
-        "name": "Command and Conquer, Red Alert",
-        "correct": false
       }]
     }, {
-      "question": "What are the steps you would take if your computer is not functioning as expected?",
-      "questionImg": "http://sites.hss.com/Images/Quiz/ComputerFix.jpg",
-      "feedback": "Well done you have made it to IT Crowd family.”",
+      "question": "Selecciona el nombre del Arquetipo al que pertenesca la siguiente imagen:",
+      "questionImg": "img/666.png",
+      "feedback": "Toma en cuenta a dos personas u organizaciones, donde su bienestar depende de la ventaja que pueda tener una de la otra.",
       "options": [{
-        "name": "Is your mouse external devices connected to computer i.e mouse, keyboard specially network cable",
-        "correct": false
-      }, {
-        "name": "Check Computer Services running virus scan at odd time i.e 09:00.am in the morning where most work get done",
-        "correct": false
-      }, {
-        "name": "Have you tried turning off and on agian",
+        "name": "Arquetipo de Escalada",
         "correct": true
+      }, {
+        "name": "Arquetipo de Erosión de Metas",
+        "correct": false
+      },{
+        "name": "Arquetipo de Crecimiento y Subinversión",
+        "correct": false
+      }, {
+        "name": "Arquetipo de Límites de Crecimiento",
+        "correct": false
+      }]
+    }, 
+    
+    {
+      "question": "Selecciona el nombre del Arquetipo al que pertenesca la siguiente imagen:",
+      "questionImg": "img/999.png",
+      "feedback": "Se dicta una solución que es planeada a coto plazo, pero éstas llegan tener consecuencias a largo plazo, las cuales muchas de las veces son imprevistas y requieren una mejor solución.",
+      "options": [{
+        "name": "Arquetipo de Éxito para quien tiene Éxito",
+        "correct": false
+      }, {
+        "name": "Arquetipo de Crecimiento y Subinversión",
+        "correct": false
+      },{
+        "name": "Arquetipo de Desplazamiento de la Carga",
+        "correct": false
+      }, {
+        "name": "Arquetipo de Soluciones Rápidas",
+        "correct": true
+      }]
+    }, {
+      "question": "¿Qué es un arquetipo sistémico?",
+      "questionImg": "img/arquetipo.png",
+      "feedback": "Buen trabajo, eres genial.”",
+      "options": [{
+        "name": "Son capaces de establecer el funcionamiento de un sistema autónomo",
+        "correct": false
+      }, {
+        "name": "Son capaces de crear patrones que llegan a establecer el comportamiento de un sistema y nos permite ver los errores que se comenten  en una organizacion.",
+        "correct": true
+      },
+      {
+        "name": "Son procedimientos que indican como debe ser utilizado un sistema, además de que, solo es utilizados por ciertos miembros de la empresa.",
+        "correct": false
+      }, {
+        "name": "Son capaces de crear procesos que definen como van a actuar los empleados ante la llegada de un nuevo sistema",
+        "correct": false
       }]
     }]
   };
@@ -138,7 +171,7 @@ angular.module('ngQuiz', ['ngSanitize'])
 
     $timeout(function() {
       quizProgress.calculatingScore = false;
-    }, 1500);
+    }, 1000);
   };
 
   $scope.startOver = function() {
@@ -181,7 +214,10 @@ angular.module('ngQuiz', ['ngSanitize'])
       }
     });
 
-    return ((rightAnswers / quizQuestions.length) * 100).toFixed() + '%';
+   
+      return ((rightAnswers / quizQuestions.length) * 100).toFixed() + '%';
+    
+
   };
 })
 

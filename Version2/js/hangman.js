@@ -1,7 +1,7 @@
 // Definimos las variables globales que vamos a utilizar
 // durante nuestra partida.
 
-var words = [['felicidad'], ['exito'], ['disciplina'], ['mentalidad'], ['direccion'], ['gratitud'], ['pasion'], ['integridad'], ['proposito'], ['trampa']];
+var words = [[''],['Escalada'], ['Carga'], ['ErosionMetas'], ['Exito'], ['Tragedia'], ['SolucionesRapidaz'], ['Crecimiento'], ['LimitesCrecimiento'], ['Intervencion']];
 var word = '';
 var hidden_letter = [];
 var letter_space = document.getElementById("word");
