@@ -116,6 +116,26 @@ angular.module('ngQuiz', ['ngSanitize'])
         "name": "Son capaces de crear procesos que definen como van a actuar los empleados ante la llegada de un nuevo sistema",
         "correct": false
       }]
+
+    },
+     {
+      "question": "¿Selecciona el arquetipo del que estamos hablando?",
+      "questionImg": "img/8.8.png",
+      "feedback": "En esta sección los individuos utilizan un recurso comun pero limitado, por lo que, únicamente repara las necesidades individuales.",
+      "options": [{
+        "name": "Arquetipo de Tragedia Común",
+        "correct": true
+      }, {
+        "name": "Arquetipo de Erosión.",
+        "correct": false
+      },
+      {
+        "name": "Arquetipo de Límites de Crecimiento",
+        "correct": false
+      }, {
+        "name": "Arquetipo de Soluciones Rápidas",
+        "correct": false
+      }]
     }]
   };
 
